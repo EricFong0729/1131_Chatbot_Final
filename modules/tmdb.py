@@ -29,7 +29,7 @@ class MovieSearch:
         except KeyError as e:
             raise ValueError(f"未在 config.ini 中找到 {str(e)} 配置")
        
-        self.base_url = "https://api.themoviedb.org/3"
+        self.base_url = "https://api.themoviedb.org/3/movie/popular?language=zh-TW'"
         
         # 初始化 Azure 翻譯客戶端
         try:
@@ -82,7 +82,6 @@ class MovieSearch:
     def search_movie(self, movie_name):
         """
         搜尋電影並獲取詳細資訊
-       
         :param movie_name: 電影名稱
         :return: 電影詳細資訊字典
         """
